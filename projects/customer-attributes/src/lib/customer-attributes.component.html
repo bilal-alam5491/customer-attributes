@@ -1,0 +1,28 @@
+<div class="customer-table-container">
+  <table class="customer-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th>Join Date</th>
+        <th>Last Purchase</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers">
+        <td class="customer-id">#{{customer.id}}</td>
+        <td class="customer-name">{{customer.name}}</td>
+        <td class="customer-email">{{customer.email}}</td>
+        <td>
+          <span class="status-badge" [ngClass]="getStatusClass(customer.status)">
+            {{customer.status}}
+          </span>
+        </td>
+        <td class="customer-date">{{customer.joinDate | date:'mediumDate'}}</td>
+        <td class="customer-amount">${{customer.lastPurchase.toFixed(2)}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

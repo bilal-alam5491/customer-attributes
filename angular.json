@@ -1,0 +1,41 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "customer-attributes": {
+      "projectType": "library",
+      "root": "projects/customer-attributes",
+      "sourceRoot": "projects/customer-attributes/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/customer-attributes/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/customer-attributes/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/customer-attributes/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/customer-attributes/src/test.ts",
+            "tsConfig": "projects/customer-attributes/tsconfig.spec.json",
+            "karmaConfig": "projects/customer-attributes/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "b91a4275-4da5-485f-b730-724a2f851404"
+  }
+}

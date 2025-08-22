@@ -1,0 +1,11 @@
+{
+  "name": "@bilal-alam5491/customer-attributes",
+  "version": "0.0.3",
+  "peerDependencies": {
+    "@angular/common": "^14.2.0",
+    "@angular/core": "^14.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
